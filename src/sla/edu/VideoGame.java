@@ -75,6 +75,7 @@ package sla.edu;
      public void setPlatform(String platform) {
          this.platform = platform;
      }
+
  }
 
 
