@@ -3,9 +3,9 @@ package sla.edu;
  public class VideoGame {
      // fields
     private int rank;
-   private   String title;
+   private String title;
    private int releaseYear;
-   private  String releaseDate;
+   private String releaseDate;
    private String developer;
    private String publisher;
    private String platform;
