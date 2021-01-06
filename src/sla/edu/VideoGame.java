@@ -7,13 +7,15 @@ package sla.edu;
    private String publisher;
    private String platform;
 
-     public VideoGame(String title, int releaseYear, String releaseDate, String developer, String publisher, String platform) {
+   // Constructors
+     public VideoGame(String title, String developer, String publisher, String platform) {
          this.title = title;
          this.developer = developer;
          this.publisher = publisher;
          this.platform = platform;
      }
 
+     // Setters and Getters
      public String getTitle() { return title; }
 
      public void setTitle(String title) { this.title = title; }
