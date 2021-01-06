@@ -2,7 +2,6 @@ package sla.edu;
 
  public class VideoGame {
      // fields
-    private int rank;
    private String title;
    private int releaseYear;
    private String releaseDate;
@@ -10,22 +9,13 @@ package sla.edu;
    private String publisher;
    private String platform;
 
-     public VideoGame(int rank, String title, int releaseYear, String releaseDate, String developer, String publisher, String platform) {
-         this.rank = rank;
+     public VideoGame(String title, int releaseYear, String releaseDate, String developer, String publisher, String platform) {
          this.title = title;
          this.releaseYear = releaseYear;
          this.releaseDate = releaseDate;
          this.developer = developer;
          this.publisher = publisher;
          this.platform = platform;
-     }
-
-     public int getRank() {
-         return rank;
-     }
-
-     public void setRank(int rank) {
-         this.rank = rank;
      }
 
      public String getTitle() {
@@ -75,7 +65,6 @@ package sla.edu;
      public void setPlatform(String platform) {
          this.platform = platform;
      }
-
  }
 
 
