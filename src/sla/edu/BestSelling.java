@@ -50,5 +50,25 @@ public class BestSelling extends VideoGame {
     public void setReleaseDate(int releaseDate) {
         this.releaseDate = releaseDate;
     }
+
+    public BestSelling(String title, String developer, String publisher, String platform) {
+        super(title, developer, publisher, platform);
+    }
+
+    //Methods
+
+    public String toString(){
+        String description = "\"" + this.getPublisher();
+        description = description + "\" developed " + this.getTitle();
+        description = description + "\" released on " + this.getReleaseDate();
+        description = description + "\" in " + this.getReleaseYear();
+        description = description + "\" for platform(s) " + this.getPlatform();
+        description = description + "\" selling this many copies:" + this.getSales();
+
+        return description;
+    }
+
 }
+
+
 
