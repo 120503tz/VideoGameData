@@ -2,18 +2,14 @@ package sla.edu;
 
 public class MostExpensiveDev extends VideoGame {
     // Fields
-    private int releaseYear;
     private int devCost;
-    private int marketCost;
-    private int totalCostmil;
+    private int releaseYear;
 
     // Constructors
-    public MostExpensiveDev(String publisher, String developer, String title, int devCost, int releaseYear, String platform, int marketCost, int totalCostmil) {
+    public MostExpensiveDev(String publisher, String developer, String title, int devCost, int releaseYear, String platform) {
         super (title, developer, publisher, platform);
-        this.releaseYear = releaseYear;
         this.devCost = devCost;
-        this.marketCost = marketCost;
-        this.totalCostmil = totalCostmil;
+        this.releaseYear = releaseYear;
     }
 
     // Setters and Getters
@@ -25,14 +21,6 @@ public class MostExpensiveDev extends VideoGame {
 
     public void setDevCost(int devCost) { this.devCost = devCost; }
 
-    public int getMarketCost() { return marketCost; }
-
-    public void setMarketCost(int marketCost) { this.marketCost = marketCost; }
-
-    public int getTotalCostmil() { return totalCostmil; }
-
-    public void setTotalCostmil(int totalCostmil) { this.totalCostmil = totalCostmil; }
-
     // Methods
     public String toString(){
         String description = "\"" + this.getPublisher();
@@ -41,7 +29,6 @@ public class MostExpensiveDev extends VideoGame {
         description = description + "\" costing " + this.getDevCost();
         description = description + "\" in " + this.getReleaseYear();
         description = description + "\" for platform(s) " + this.getPlatform();
-        //description = description + "\"
         return description;
     }
 }

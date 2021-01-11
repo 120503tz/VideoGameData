@@ -31,7 +31,11 @@ package sla.edu;
      public String getPlatform() { return platform; }
 
      public void setPlatform(String platform) { this.platform = platform; }
+
  }
+
+
+
 
 
 

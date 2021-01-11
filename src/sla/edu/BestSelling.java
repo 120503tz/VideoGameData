@@ -8,8 +8,6 @@ public class BestSelling extends VideoGame {
     private int releaseDate;
 
     //constructors
-
-
     public BestSelling(String title, String developer, String publisher, String platform, int sales, int rank, int releaseYear, int releaseDate) {
         super(title, developer, publisher, platform);
         this.sales = sales;
