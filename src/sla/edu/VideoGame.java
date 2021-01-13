@@ -49,7 +49,7 @@ import java.util.ArrayList;
          return description;
      }
 
-     public void describeAll() {
+     public static void describeAll() {
          videogames.forEach(videogame -> {
              System.out.println(videogame.toString());
          });
