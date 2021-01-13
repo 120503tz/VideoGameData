@@ -1,7 +1,10 @@
 package sla.edu;
 
+import java.util.ArrayList;
+
  public class VideoGame {
      // fields
+   private static ArrayList<VideoGame> videogames;
    private String title;
    private String developer;
    private String publisher;
@@ -13,6 +16,11 @@ package sla.edu;
          this.developer = developer;
          this.publisher = publisher;
          this.platform = platform;
+
+         if (videogames == null) {
+            videogames = new ArrayList<VideoGame>();
+         }
+         videogames.add(this);
      }
 
      // Setters and Getters
@@ -32,6 +40,20 @@ package sla.edu;
 
      public void setPlatform(String platform) { this.platform = platform; }
 
+     // Methods
+     public String toString(){
+         String description = "\"" + this.getTitle();
+         description = description + "\" was developed by " + this.getDeveloper();
+         description = description + " and was published by " + this.getPublisher();
+         description = description + " for platform(s) " + this.getPlatform();
+         return description;
+     }
+
+     public void describeAll() {
+         videogames.forEach(videogame -> {
+             System.out.println(videogame.toString());
+         });
+     }
  }
 
 

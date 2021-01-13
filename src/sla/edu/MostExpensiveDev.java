@@ -25,10 +25,10 @@ public class MostExpensiveDev extends VideoGame {
     public String toString(){
         String description = "\"" + this.getPublisher();
         description = description + " and " + this.getDeveloper();
-        description = description + "\" developed " + this.getTitle();
-        description = description + "\" costing " + this.getDevCost();
-        description = description + "\" in " + this.getReleaseYear();
-        description = description + "\" for platform(s) " + this.getPlatform();
+        description = description + " developed " + this.getTitle();
+        description = description + " costing " + this.getDevCost();
+        description = description + " in " + this.getReleaseYear();
+        description = description + " for platform(s) " + this.getPlatform();
         return description;
     }
 }
