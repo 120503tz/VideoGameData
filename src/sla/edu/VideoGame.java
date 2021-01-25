@@ -50,9 +50,11 @@ import java.util.ArrayList;
      }
 
      public static void describeAll() {
-         videogames.forEach(videogame -> {
-             System.out.println(videogame.toString());
-         });
+         if (videogames != null) {
+             videogames.forEach(videogame -> {
+                 System.out.println(videogame.toString());
+             });
+         }
      }
  }
 
