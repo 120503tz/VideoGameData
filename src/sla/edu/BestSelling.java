@@ -9,10 +9,10 @@ public class BestSelling extends VideoGame {
     private int sales;
     private int rank;
     private int releaseYear;
-    private int releaseDate;
+    private String releaseDate;
 
     //constructors
-    public BestSelling(String title, String developer, String publisher, String platform, int sales, int rank, int releaseYear, int releaseDate) {
+    public BestSelling(String title, String developer, String publisher, String platform, int sales, int rank, int releaseYear, String releaseDate) {
         super(title, developer, publisher, platform);
         this.sales = sales;
         this.rank = rank;
@@ -45,11 +45,11 @@ public class BestSelling extends VideoGame {
         this.releaseYear = releaseYear;
     }
 
-    public int getReleaseDate() {
+    public String getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(int releaseDate) {
+    public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
 
@@ -95,10 +95,14 @@ public class BestSelling extends VideoGame {
             // There are 8 data tokens that we need for each Bestselling
             int rank = lineScanner.nextInt();
             String title = lineScanner.next();
+            System.out.println(title);
             int sales = lineScanner.nextInt();
             String platform = lineScanner.next();
-            int releaseDate = lineScanner.nextInt();
-            int releaseYear = lineScanner.nextInt();
+            String releaseDate = lineScanner.next();
+            //November 18, 2011
+            int commalocation = releaseDate.indexOf(",");
+            String year = releaseDate.substring( commalocation + 2);
+            int releaseYear = Integer.parseInt(year);
             String developer = lineScanner.next();
             String publisher = lineScanner.next();
 
