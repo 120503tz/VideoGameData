@@ -1,5 +1,9 @@
 package sla.edu;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class BestSelling extends VideoGame {
     //fields
     private int sales;
@@ -65,7 +69,42 @@ public class BestSelling extends VideoGame {
 
         return description;
     }
+    static void read(String dataFilePath) {
+        // try to create Scanner
+        Scanner scanner = null;
+        try {
+            File file = new File(dataFilePath);
+            scanner = new Scanner(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Problem opening file: " + dataFilePath);
+        }
+        if (scanner == null) {
+            // I can't scan without a scanner, so we're done.
+            return;
+        }
 
+        // Read from each line in data file until there are no more
+        while (scanner.hasNext()) {
+            String next = scanner.nextLine();
+            // Construct a new scanner for each to get its tokens
+            Scanner lineScanner = new Scanner(next);
+            // Data tokens are separated by tabs
+            lineScanner.useDelimiter("\t");
+
+            // There are 8 data tokens that we need for each Bestselling
+            int rank = lineScanner.nextInt();
+            String title = lineScanner.next();
+            int sales = lineScanner.nextInt();
+            String platform = lineScanner.next();
+            int releaseDate = lineScanner.nextInt();
+            int releaseYear = lineScanner.nextInt();
+            String developer = lineScanner.next();
+            String publisher = lineScanner.next();
+
+            VideoGame videoGame = new BestSelling(title, developer,publisher,platform,sales,rank,releaseYear,releaseDate);
+        }
+    }
 }
 
 
