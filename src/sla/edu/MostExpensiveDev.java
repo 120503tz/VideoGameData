@@ -1,12 +1,16 @@
 package sla.edu;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class MostExpensiveDev extends VideoGame {
     // Fields
-    private int devCost;
+    private String devCost;
     private int releaseYear;
 
     // Constructors
-    public MostExpensiveDev(String publisher, String developer, String title, int devCost, int releaseYear, String platform) {
+    public MostExpensiveDev(String publisher, String developer, String title, String devCost, int releaseYear, String platform) {
         super (title, developer, publisher, platform);
         this.devCost = devCost;
         this.releaseYear = releaseYear;
@@ -17,9 +21,9 @@ public class MostExpensiveDev extends VideoGame {
 
     public void setReleaseYear(int releaseYear) { this.releaseYear = releaseYear; }
 
-    public int getDevCost() { return devCost; }
+    public String getDevCost() { return devCost; }
 
-    public void setDevCost(int devCost) { this.devCost = devCost; }
+    public void setDevCost(String devCost) { this.devCost = devCost; }
 
     // Methods
     public String toString(){
@@ -30,5 +34,40 @@ public class MostExpensiveDev extends VideoGame {
         description = description + " in " + this.getReleaseYear();
         description = description + " for platform(s) " + this.getPlatform();
         return description;
+    }
+    static void read(String dataFilePath) {
+        Scanner scanner = null;
+
+        try {
+            File file = new File(dataFilePath);
+            scanner = new Scanner(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Problem opening file " + dataFilePath);
+        }
+        if (scanner == null) {
+            return;
+        }
+
+        while (scanner.hasNext()) {
+            String next = scanner.nextLine();
+            Scanner lineScanner = new Scanner(next);
+            lineScanner.useDelimiter("\t");
+
+            //5 data tokens
+            String title = lineScanner.next();
+            System.out.println(title);
+            int releaseyear = lineScanner.nextInt();
+            String developer = lineScanner.next();
+            String publisher = lineScanner.next();
+            String platform = lineScanner.next();
+            String devcost = lineScanner.next();
+            int pluslocation = devcost.indexOf("+");
+            String cost = devcost.substring( 0,pluslocation - 1);
+            int Devcost = Integer.parseInt(cost);
+
+
+            VideoGame videogame = new MostExpensiveDev(publisher, developer, title, devcost, releaseyear, platform);
+        }
     }
 }
