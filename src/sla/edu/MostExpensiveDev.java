@@ -65,7 +65,6 @@ public class MostExpensiveDev extends VideoGame {
             int pluslocation = devcost.indexOf("+");
             if (pluslocation != -1) {
                 String cost = devcost.substring( 0,pluslocation - 1);
-                String Devcost = cost;
             } else {
                 String Devcost = lineScanner.next();
             }
