@@ -63,8 +63,12 @@ public class MostExpensiveDev extends VideoGame {
             String platform = lineScanner.next();
             String devcost = lineScanner.next();
             int pluslocation = devcost.indexOf("+");
-            String cost = devcost.substring( 0,pluslocation - 1);
-            int Devcost = Integer.parseInt(cost);
+            if (pluslocation != -1) {
+                String cost = devcost.substring( 0,pluslocation - 1);
+                String Devcost = cost;
+            } else {
+                String Devcost = lineScanner.next();
+            }
 
 
             VideoGame videogame = new MostExpensiveDev(publisher, developer, title, devcost, releaseyear, platform);
